@@ -1,0 +1,28 @@
+﻿
+.navbar-default1
+{
+    font-family: Calibri;
+    font-size: 14px;
+    border-style: none;
+}
+
+.navbar-default1 a
+{
+    color: #000000;
+}
+
+.navbar-default1 a:hover
+{
+    color: #ffffff;
+}
+
+.navbar-default1 a:hover, a:visited 
+{       background: transparent;
+        text-decoration: none;
+}
+
+.navbar-default1 a:focus
+{
+        outline: 0;
+        text-decoration: none;
+}

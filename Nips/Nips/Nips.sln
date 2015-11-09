@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nips", "Nips\Nips.csproj", "{BCB77998-30F9-4926-B091-A3AD0464FCB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "Nips.EF\DAL.csproj", "{D237A1C9-A2AA-4801-B2C4-E9D1CB50D7FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Nips.Domain\Model.csproj", "{3355638A-9784-4FB7-9C87-4BC9704D8EAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{F5578BF0-033F-4AB1-AEE3-32124B4F0493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NipsTest", "NipsTest\NipsTest.csproj", "{8FE0B7E2-C25E-4E18-883B-556316F19790}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCB77998-30F9-4926-B091-A3AD0464FCB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCB77998-30F9-4926-B091-A3AD0464FCB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCB77998-30F9-4926-B091-A3AD0464FCB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCB77998-30F9-4926-B091-A3AD0464FCB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D237A1C9-A2AA-4801-B2C4-E9D1CB50D7FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D237A1C9-A2AA-4801-B2C4-E9D1CB50D7FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D237A1C9-A2AA-4801-B2C4-E9D1CB50D7FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D237A1C9-A2AA-4801-B2C4-E9D1CB50D7FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3355638A-9784-4FB7-9C87-4BC9704D8EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3355638A-9784-4FB7-9C87-4BC9704D8EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3355638A-9784-4FB7-9C87-4BC9704D8EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3355638A-9784-4FB7-9C87-4BC9704D8EAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5578BF0-033F-4AB1-AEE3-32124B4F0493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5578BF0-033F-4AB1-AEE3-32124B4F0493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5578BF0-033F-4AB1-AEE3-32124B4F0493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5578BF0-033F-4AB1-AEE3-32124B4F0493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FE0B7E2-C25E-4E18-883B-556316F19790}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FE0B7E2-C25E-4E18-883B-556316F19790}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FE0B7E2-C25E-4E18-883B-556316F19790}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FE0B7E2-C25E-4E18-883B-556316F19790}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://ekongshavn.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Nips\\Nips.csproj
+		SccProjectName1 = Nips
+		SccLocalPath1 = Nips
+		SccProjectUniqueName2 = Nips.Domain\\Model.csproj
+		SccProjectName2 = Nips.Domain
+		SccLocalPath2 = Nips.Domain
+		SccProjectUniqueName3 = Nips.EF\\DAL.csproj
+		SccProjectName3 = Nips.EF
+		SccLocalPath3 = Nips.EF
+		SccProjectUniqueName4 = BLL\\BLL.csproj
+		SccProjectName4 = BLL
+		SccLocalPath4 = BLL
+		SccProjectUniqueName5 = NipsTest\\NipsTest.csproj
+		SccProjectName5 = NipsTest
+		SccLocalPath5 = NipsTest
+	EndGlobalSection
+EndGlobal

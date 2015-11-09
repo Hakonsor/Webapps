@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Nips.Model.Entities.OrderLine>
+
+<link href="~/Content/Custom/Main.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Vis Ordre";
+    ViewBag.pris = 0;
+}
+
+<div class="container">
+    <div class="jumbotron">
+        <h2>Historik</h2>
+        <p>
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.produktid)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.produkt.navn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.produkt.beskrivelse)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.antall)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.produkt.pris)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.produktid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.produkt.navn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.produkt.beskrivelse)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.antall)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.produkt.pris)
+                        @{ViewBag.pris += item.produkt.pris;}
+                    </td>
+                </tr>
+                            }
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    Totalt:
+                </td>
+                <td>
+                    @ViewBag.pris
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

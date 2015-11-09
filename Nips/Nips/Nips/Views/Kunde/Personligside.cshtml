@@ -1,0 +1,63 @@
+﻿@model Nips.Model.Entities.Kunde
+
+@{
+    ViewBag.Title = "Min Side";
+}
+<link href="~/Content/Custom/Main.css" rel="stylesheet" />
+
+
+<div class="container">
+    <div class="jumbotron" style="padding-top:2px">
+        <div class="row">
+
+            <h3><span class="glyphicon glyphicon-user"></span> Velkommen, @Html.DisplayFor(model => model.fornavn) @Html.DisplayFor(model => model.etternavn) </h3>
+
+            <hr />
+            <table class="table">
+                <tr>
+                    <th> <span class="glyphicon glyphicon-user"></span>@Html.ActionLink(" Endre Brukerinfo", "updateUserinfo", "Kunde")</th>
+                    <th> <span class="glyphicon glyphicon-asterisk"></span>@Html.ActionLink(" Endre Passord", "updateUserPassword", "Kunde")</th>
+                    <th> <span class="glyphicon glyphicon-align-justify"></span>@Html.ActionLink(" Ordre Historikk", "viewOrderhistorikk", "Order")</th>
+                    @if (Session["isAdmin"] != null)
+                    {
+                        if ((bool)Session["isAdmin"])
+                        {
+                    <th> <span class="glyphicon glyphicon glyphicon-heart"></span>@Html.ActionLink("Administrator", "Admin", "Kunde")</th>
+                        }
+                    }
+                  </tr>
+            </table>
+
+
+        
+
+
+
+            @if (TempData["changed"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    @TempData["changed"]
+                </div>
+            }
+
+            @if (TempData["pview"].Equals("info"))
+            {
+                @Html.Partial("updateUserinfo", Model);
+
+            }
+            else if (TempData["pview"].Equals("passord"))
+            {
+                @Html.Partial("updateUserPassword", Model);
+            }
+            else if (TempData["pview"].Equals("orderline"))
+            {
+
+                var list = TempData["list"];
+
+
+                @Html.Partial("viewOrderhistorikk", list);
+            }
+
+        </div>
+    </div>
+</div>

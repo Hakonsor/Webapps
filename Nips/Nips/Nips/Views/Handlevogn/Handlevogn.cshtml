@@ -1,0 +1,78 @@
+﻿@model Nips.Model.Entities.Handlevogn
+
+@{
+    ViewBag.Title = "Handlevogn";
+}
+<link href="~/Content/Custom/Main.css" rel="stylesheet" type="text/css" />
+
+    <div class="container">
+    <div class="jumbotron">
+        <h3><span class="glyphicon glyphicon-shopping-cart"></span> Min handlekurv</h3>
+
+        <table class="table">
+            <tr>
+                <th>Vare</th>
+                <th>Antall</th>
+                <th>Pris</th>
+                <th>Slett</th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.handlevognVare)
+            {
+                <tr>
+                @using (Html.BeginForm("updateVogn", "Handlevogn", FormMethod.Post))
+                {
+                @Html.AntiForgeryToken()
+                    <td>
+                        @Html.DisplayFor(modelItem => item.produkt.navn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.antall)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem=> item.pris)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Fjern", "removeItem", new { id = @Model.handlevognVare.IndexOf(item)} )
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-refresh"></i></button>
+                            <input type="hidden" name="id" value="@Model.handlevognVare.IndexOf(item)" />
+                    </td>
+                }
+                </tr>
+            }
+
+        </table>
+        <div>
+            <hr />
+            <h4>
+                SUM:
+                @Html.DisplayFor(modelVare => Model.sum)
+                ,-
+            </h4>
+            <hr style="border-top:1px solid rgb(221, 221,221);" />
+                @if (Model.handlevognVare.Count() == 0)
+                {
+                              <h4>Handlekurven er tom</h4>
+                }
+
+                <button type="button" class="btn btn-default active">
+                    @if (Session["LoggedInUser"] == null)
+                    {
+                        @Html.ActionLink("Logg inn (for checkout)", "Login", "Kunde")
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Skjekk ut ", "Checkout", "Handlevogn", new { target = "_blank" })
+                    }
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                </button>
+                <button type="button" class="btn btn-default active">          
+                    @Html.ActionLink("Fortsett å handle ", "Front", "Main")            
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+            </button>
+                
+        </div>
+    </div>
+</div> 

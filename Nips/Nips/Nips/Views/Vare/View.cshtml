@@ -1,0 +1,54 @@
+﻿@model List<Nips.Model.Entities.Produkt>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/Custom/Main.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Custom/Nav.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Liste</title>
+    <script type="text/javascript">
+        $(function () {
+
+
+            $('a[data-sletteModal=true]').click(function () {
+            var data_navn = $(this).data('navn');
+            var data_id = $(this).data('id');
+            $('#slettNavn').html(data_navn);
+            $('#sletteModalKnapp').click(function () {
+                $.ajax({
+                    url: '@Url.Action("Slett", "Kunde")',
+                    data: { id: data_id },
+                    success: function(){
+                        $.ajax({
+                            url: '@Url.Action("Liste", "Kunde")',
+                            success: function(){
+                                window.location.reload();
+                            }
+                        });
+
+                    }
+                });
+            })
+        })
+        });
+        
+
+    </script>
+
+
+</head>
+<body>
+    @foreach(var Vare in Model)
+    {
+        @Html.Partial("ListePartial", Vare)
+    }
+</body>
+
+
+</html>

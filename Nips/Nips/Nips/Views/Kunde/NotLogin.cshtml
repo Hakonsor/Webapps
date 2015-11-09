@@ -1,0 +1,47 @@
+﻿<link href="~/Content/Custom/Main.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/Custom/Nav.css" rel="stylesheet" type="text/css" />
+
+<div id="NotLoggedIn" class="modal fade my-modal-notloggedin">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>For å handle må du være logget inn </h3>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-5 panel panel-default" style="margin-left:17px">
+                        <h4>
+                            Ny bruker
+                        </h4>
+                        <p>Du kan registrere en ny bruker.</p>
+
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-5 panel panel-default" style="margin-right:17px">
+                        <h4>
+                            Eksisterende bruker
+                        </h4>
+                        <p>Logg inn her.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <button type="button" onclick="location.href='@Url.Action("Registrer", "Kunde")'" class="btn btn-primary" style="margin-top:0px">
+                            <span class="glyphicon glyphicon-pencil"></span> Registrer deg
+                        </button>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-5">
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="modalLogInBtn" style="margin-top:0px">
+                            <span class="glyphicon glyphicon-log-in"></span> Logg inn
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

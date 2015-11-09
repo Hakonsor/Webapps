@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Nips.Model.Entities.Order>
+
+@{
+    ViewBag.Title = "Ordrehistorikk";
+}
+
+<link href="~/Content/Custom/Main.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/Custom/Nav.css" rel="stylesheet" type="text/css" />
+
+    <div class="container">
+    <div class="jumbotron">
+            <h3>
+                <span class="glyphicon glyphicon-align-justify"></span> Min ordrehistorikk
+            </h3>
+            <br />
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.orderdato)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.sendt)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var vare in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelVare => vare.id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelVare => vare.orderdato)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelVare => vare.sendt)
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("Checkout", "Handlevogn"))
+                            {
+                                @Html.HiddenFor(modelItem => vare.id)
+                                @Html.HiddenFor(modelItem => vare.orderdato)
+                                <input type="hidden" name="viewOrder" value="true" />
+                                <u> @Html.ActionLink("Se ordre", "visOrder", "Order", vare, new { target = "_blank" })</u>
+                                //<button type="submit">Detaljer</button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>

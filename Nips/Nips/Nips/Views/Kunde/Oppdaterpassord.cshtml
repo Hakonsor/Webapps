@@ -1,0 +1,54 @@
+﻿@model Nips.Model.Entities.Kunde
+
+@{
+    ViewBag.Title = "Oppdaterpassord";
+}
+
+<link href="~/Content/Custom/Main.css" rel="stylesheet" />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                    <form role="form">
+                        <h3>
+                            <span class="glyphicon glyphicon-user"></span> Endre ditt passord
+                        </h3>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="password" placeholder="Nåværende passord" name="op" class="form-control input-lg" tabindex="1">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="password" placeholder="Nytt passord" name="np" class="form-control input-lg" tabindex="2">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="password" placeholder="Bekreft nytt passord" name="bp" class="form-control input-lg" tabindex="3">
+                            </div>
+                        </div>
+                        <br>
+                        @if (ViewBag.correct != null)
+                        {
+                            <div class="alert alert-danger" role="alert">@ViewBag.correct</div>
+                        }
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="submit" value="Endre passord" class="btn btn-success" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

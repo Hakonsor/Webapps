@@ -1,0 +1,54 @@
+﻿@model Nips.Model.Entities.Kvittering
+
+@{
+    ViewBag.Title = "Kvittering";
+}
+
+<link href="~/Content/Custom/Main.css" rel="stylesheet" type="text/css" />
+<div class="container">
+    <div class="jumbotron">
+        <h2>Kvittering</h2>
+        <h4>Kvittering</h4>
+        <dl class="dl-horizontal">
+            @foreach (Nips.Model.Entities.HandlevognVare e in Model.handlevogn.handlevognVare)
+            {
+                <dt>
+                    @e.produkt.navn
+                </dt>
+
+                <dd>
+                    Pris :@e.produkt.pris
+                </dd>
+            }
+
+        </dl>
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.exmva)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.exmva)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.mva)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.mva)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.sum)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.sum)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>

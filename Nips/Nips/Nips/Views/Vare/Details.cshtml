@@ -1,0 +1,38 @@
+﻿@model Nips.Model.Entities.Produkt
+
+@{
+    ViewBag.Title = "title";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="~/Content/Custom/Main.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Custom/Nav.css" rel="stylesheet" type="text/css" />
+</head>
+<div class="container">
+    <div class="jumbotron">
+        @if (Model.ImageUrl != null)
+        {
+            <img src="@Model.ImageUrl" />
+        }
+        <hr style="border-top:1px solid rgb(221, 221, 221);" />
+        <h3>@Model.navn</h3>
+        <h4>@Model.pris ,-</h4>
+        @Model.beskrivelse
+        <hr style="border-top:1px solid rgb(221, 221, 221);" />
+
+        <div class="row">
+        <div class='col-xs-4 form-group input-group required'>
+                @using (Html.BeginForm("addToVogn", "Handlevogn", FormMethod.Post))
+                {           
+                    @Html.Hidden("varenummer", Model.id);
+                    
+                    @Html.TextBox("antall", "1");
+                    
+                    <input type="submit" value="Bestill" />
+                }
+            </div>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,62 @@
+﻿@model Nips.Model.Entities.Kunde
+
+@{
+    ViewBag.Title = "Login"; 
+}
+
+<link href="~/Content/Custom/Main.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/Custom/Nav.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/jquery-1.9.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#verify').keyup(function () {
+            if ($(this).val() == $('#passord').val()) {
+                $('#verifynote').addClass('hidden');
+            }
+            else {
+                $('#verifynote').removeClass('hidden');
+            }
+        });
+
+    });
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                    <div class="formTitle">
+                        <h2><span class="glyphicon glyphicon-user"></span>  Logg Inn</h2>
+                        <hr style="border-top:1px solid rgb(221, 221, 221);" />
+                    </div>
+                        <form role="form">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="email" class="form-control input-lg" placeholder="Email" tabindex="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" name="passord" class="form-control input-lg" placeholder="Passord" tabindex="2">
+                                        <br />
+                                        <p>@ViewBag.Error</p>
+                                        <button type="submit" class="btn btn-primary" tabindex="11">
+                                            <i class="glyphicon glyphicon-log-in"></i>  Logg inn
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="border-top:1px solid rgb(221, 221, 221);" />
+                            Har du ikke bruker? <input type="button" value="Registrer deg her" onclick="location.href='@Url.Action("Registrer", "Kunde")'" />
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,72 @@
+﻿@model List<Nips.Model.Entities.Produkt>
+
+@{
+    ViewBag.Title = "Forsiden"; 
+}
+<link href="~/Content/Custom/Main.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="jumbotron">
+        <h3>Søk i våre nipsete varer!</h3>
+        <hr />
+        <h4>Du kan kun søke etter mat, møbel, stein & klær foreløpig</h4>
+        <div class="row">
+            <br />
+            <input class="search-input" placeholder="Søk i våre varer" />
+            <div class="search-result">
+                <hr />
+                Resultat
+            </div>
+            <p class="search-count"></p>
+            <hr />
+        </div>
+    </div>
+    <div class="jumbotron">
+        <h3>Våre beste varer</h3>
+        <hr />
+        <div class="row">
+            <br />
+            @if (!Model.Any())
+            {
+                <p>Vi har desverre ingen produkter nå.</p>
+            }
+               @foreach (var item in Model)
+               {
+                   <div class="col-md-3">
+                       <img style="width:100%;" src="@item.ImageUrl" />
+                       <h3>@item.navn</h3>
+                       <h4>@item.beskrivelse</h4>
+                       <p>@item.pris ,- kr</p>
+                        Lager: @item.antall 
+                       <button onclick="window.location.href='/vare/Details/@item.id'">Les mer / kjøp</button>
+                       
+                   </div>
+               }
+            <hr />
+        </div>
+    </div>
+</div>
+<hr>
+<script src="~/Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".search-input").keyup(function () {
+
+            if ($(this).val() == "") {
+                $(".search-result").html("");
+                $(".search-count").html("");
+            }
+            $.getJSON("/api/v1/produkt/search/" + $(".search-input").val(), null, function (result) {
+                //Ajax
+                var temp = "";
+                $.each(result, function (i, v) {
+                    temp += "<div> <b>" + v.navn + "</b>" +
+                        "<a href='/vare/Details/" + v.id + "'> Les mer </a> </div>";
+                });
+                $(".search-result").html(temp);
+                $(".search-count").html(result.length + " resultater");
+            });
+        });
+    });
+</script>
