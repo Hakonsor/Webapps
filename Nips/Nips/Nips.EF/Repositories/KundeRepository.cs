@@ -9,7 +9,7 @@ using Nips.DAL.Repositories.Stud;
 
 namespace Nips.DAL.Repositories
 {
-    public class KundeRepository : BaseRepository , IKundeRepository
+    public class KundeRepository : IKundeRepository
     {
         public bool add(Kunde iKunde, byte[] hashedPassord)
         {
@@ -26,6 +26,7 @@ namespace Nips.DAL.Repositories
             };
             try
             {
+                var Db = new DataService();
                 var existPostnr = Db.Poststeder.Find(Convert.ToInt16(iKunde.postnr));
 
                 if (existPostnr == null)
@@ -52,7 +53,7 @@ namespace Nips.DAL.Repositories
         {
             try
             {
-
+                var Db = new DataService();
                 var result = (from kunde in Db.Kunder
                              select
                                  new Kunde()
@@ -80,6 +81,7 @@ namespace Nips.DAL.Repositories
 
         public Kunde finnKunde(String email)
         {
+            var Db = new DataService();
             Kunder userFound = Db.Kunder.FirstOrDefault(u => u.Email == email);
             Kunde k = new Kunde();
             k.kundeid = userFound.Id;
@@ -99,6 +101,7 @@ namespace Nips.DAL.Repositories
         {
             try
             {
+                var Db = new DataService();
                 Kunder userFound = Db.Kunder.FirstOrDefault(u => u.Id == id);
                 Db.Kunder.Remove(userFound);
                 Db.SaveChanges();
@@ -116,6 +119,7 @@ namespace Nips.DAL.Repositories
 
         public Kunde getKunde(int id) 
         {
+            var Db = new DataService();
             Kunder userFound = Db.Kunder.FirstOrDefault(u => u.Id == id);
             Kunde k = new Kunde();
             k.kundeid = userFound.Id;
@@ -136,6 +140,7 @@ namespace Nips.DAL.Repositories
         {
             try
             {
+                var Db = new DataService();
                 Kunder validated = Db.Kunder.FirstOrDefault(u => u.Passord == hashedPassord && u.Email == email);
                 if (validated == null)
                     return false;
@@ -155,6 +160,7 @@ namespace Nips.DAL.Repositories
 
             try
             {
+                var Db = new DataService();
                 Kunder kun = Db.Kunder.FirstOrDefault(u => u.Id == id);
 
                 kun.Fornavn = updateUser.fornavn;
@@ -192,6 +198,7 @@ namespace Nips.DAL.Repositories
         {
             try
             {
+                var Db = new DataService();
                 Kunder kun = Db.Kunder.FirstOrDefault(u => u.Id == id);
                 kun.Passord = newPassord;
                 Db.SaveChanges();
@@ -208,7 +215,7 @@ namespace Nips.DAL.Repositories
         
         public bool checkEmail(string email, int? id)
         {
-
+            var Db = new DataService();
             Kunder kun = Db.Kunder.FirstOrDefault(u => u.Email.Equals(email));
 
             if ((kun == null) || (kun != null && kun.Id == id))

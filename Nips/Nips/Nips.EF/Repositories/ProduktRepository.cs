@@ -8,10 +8,11 @@ using System.IO;
 
 namespace Nips.DAL.Repositories
 {
-    public class ProduktRepository : BaseRepository, IProduktRepository
+    public class ProduktRepository : IProduktRepository
     {
         public List<Produkt> alleVare()
         {
+            var Db = new DataService();
             var liste = (from v in Db.Produkter 
                          select new Produkt()
                          {
@@ -29,6 +30,7 @@ namespace Nips.DAL.Repositories
   
         public int lagreVare(Produkt innVare)
         {
+            var Db = new DataService();
             var nyVare = new Produkter()
             {
                 Navn = innVare.navn,
@@ -56,6 +58,7 @@ namespace Nips.DAL.Repositories
         {
             try
             {
+                var Db = new DataService();
                 var endreVare = Db.Produkter.Find(id);
                 endreVare.Navn = innVare.navn;
                 endreVare.Beskrivelse = innVare.beskrivelse;
@@ -77,6 +80,7 @@ namespace Nips.DAL.Repositories
 
             try
             {
+                var Db = new DataService();
                 var slettVarer = Db.Produkter.Find(slettId);
                 Db.Produkter.Remove(slettVarer);
                 Db.SaveChanges();
@@ -90,6 +94,7 @@ namespace Nips.DAL.Repositories
         }
         public Produkt hentEnVare(int id)
         {
+            var Db = new DataService();
             var enDbVare = Db.Produkter.Find(id);
 
             if (enDbVare == null)
@@ -119,6 +124,7 @@ namespace Nips.DAL.Repositories
 
             try
             {
+                var Db = new DataService();
                 using (StreamWriter writer = new StreamWriter(path, true))
                 {
                     writer.WriteLine("******   " + DateTime.Now.ToString() + "   ******");

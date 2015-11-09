@@ -65,6 +65,7 @@
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\OrderLine.cs" />
     <Compile Include="Entities\Produkt.cs" />
+    <Compile Include="Entities\Spørsmål.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

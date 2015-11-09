@@ -53,17 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataService.cs" />
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Entities\Kategori.cs" />
     <Compile Include="Entities\Kunde.cs" />
     <Compile Include="Entities\Ordere.cs" />
     <Compile Include="Entities\OrderLiner.cs" />
     <Compile Include="Entities\Poststeder.cs" />
     <Compile Include="Entities\Produkter.cs" />
+    <Compile Include="Entities\Spørsmålene.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\IOrderRepository.cs" />
@@ -71,24 +67,15 @@
     <Compile Include="Repositories\KundeRepository.cs" />
     <Compile Include="Repositories\OrderRepository.cs" />
     <Compile Include="Repositories\ProduktRepository.cs" />
+    <Compile Include="Repositories\SpørsmålRepository.cs" />
     <Compile Include="Repositories\Stud\IKundeRepositoryStud.cs" />
+    <Compile Include="Repositories\ISpørsmålRepository.cs" />
     <Compile Include="Repositories\Stud\ProduktRepositoryStud.cs" />
     <Compile Include="Repositories\Stud\KundeRepositoryStud.cs" />
     <Compile Include="Repositories\Stud\OrderRepositoryStub.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

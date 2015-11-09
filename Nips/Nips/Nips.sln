@@ -43,25 +43,4 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://ekongshavn.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Nips\\Nips.csproj
-		SccProjectName1 = Nips
-		SccLocalPath1 = Nips
-		SccProjectUniqueName2 = Nips.Domain\\Model.csproj
-		SccProjectName2 = Nips.Domain
-		SccLocalPath2 = Nips.Domain
-		SccProjectUniqueName3 = Nips.EF\\DAL.csproj
-		SccProjectName3 = Nips.EF
-		SccLocalPath3 = Nips.EF
-		SccProjectUniqueName4 = BLL\\BLL.csproj
-		SccProjectName4 = BLL
-		SccLocalPath4 = BLL
-		SccProjectUniqueName5 = NipsTest\\NipsTest.csproj
-		SccProjectName5 = NipsTest
-		SccLocalPath5 = NipsTest
-	EndGlobalSection
 EndGlobal

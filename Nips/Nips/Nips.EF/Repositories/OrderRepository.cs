@@ -9,10 +9,11 @@ using Nips.DAL.Repositories.Stud;
 
 namespace Nips.DAL.Repositories
 {
-    public class OrderRepository : BaseRepository , IOrderRepository
+    public class OrderRepository : IOrderRepository
     {
         public int checkout(Handlevogn vogn)
         {
+            var Db = new DataService();
             var newOrder = new Ordere()
             {
                 orderdato = DateTime.Now,
@@ -22,6 +23,7 @@ namespace Nips.DAL.Repositories
             };
             try
             {
+                
                 Db.Ordere.Add(newOrder);
                 
 
@@ -58,6 +60,7 @@ namespace Nips.DAL.Repositories
         }
         public List<Order> getOrder()
         {
+            var Db = new DataService();
             var result = (from o in Db.Ordere 
                           select new Order()
                           {
@@ -74,7 +77,7 @@ namespace Nips.DAL.Repositories
         {
             try
             {
-               
+                var Db = new DataService();
                 Ordere order = Db.Ordere.Find(id);
                 order.sendt = true;
                 Db.SaveChanges();
@@ -91,6 +94,7 @@ namespace Nips.DAL.Repositories
 
         public List<Order> getOrders(int id)
         {
+            var Db = new DataService();
             var order = Db.Ordere.Where(o => o.kundeid == id).ToList();
             List<Order> list = new List<Order>();
             foreach (var vare in order)
@@ -108,7 +112,8 @@ namespace Nips.DAL.Repositories
         }
         public List<OrderLine> getOrderLine(int id)
         {
-        //DØR INNI HER
+            
+            var Db = new DataService();
             var lines = Db.OrderLiner.Where(o => o.orderid == id).ToList();
             List<OrderLine> list = new List<OrderLine>();
             foreach (var vare in lines)

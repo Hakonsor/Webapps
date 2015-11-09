@@ -17,12 +17,11 @@ namespace Nips.DAL
         public DbSet<OrderLiner> OrderLiner { get; set; }
         public DbSet<Ordere> Ordere { get; set; }
         public DbSet<Kunder> Kunder { get; set; }
+        public DbSet<Spørsmålene> Spørsmålene { get; set; }
         public DbSet<Poststeder> Poststeder { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
-            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
     }
 }

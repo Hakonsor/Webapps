@@ -190,6 +190,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Content\Kundegenerator.cs" />
+    <Compile Include="Controllers\API\FAQController.cs" />
     <Compile Include="Controllers\API\KundeController.cs" />
     <Compile Include="Controllers\API\ProduktController.cs" />
     <Compile Include="Controllers\WEB\OrderController.cs" />
@@ -247,6 +248,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\img\logo\" />
+    <Folder Include="Views\FAQ\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
