@@ -2,13 +2,14 @@
 
 App.controller("faqController", function ($scope, $http) {
 
-    var url = '/api/FAQ/';
+    var url = '/api/Oss/';
     $scope.sletteFeil = false;
 
     function sporsmalListe() {
         $http.get(url).success(function (alleSporsmal) {
-            $scope.sporsmal = alleSporsmal;
+            $scope.alleSporsmal = alleSporsmal;
             $scope.laster = false;
+            console.log("Fungerte det?");
         }).error(function (data, status) {
             console.log(status + data);
         });
@@ -19,25 +20,25 @@ App.controller("faqController", function ($scope, $http) {
     sporsmalListe();
 
     $scope.visRegSporsmal = function () {
-        $scope.epost = "";
+        $scope.email = "";
         $scope.beskrivelse = "";
 
         $scope.setPristine();
-        $scope.regKnapp = false;
-        $scope.visSkjema = true;
-        $scope.visKunder = false;
-        $scope.sendKnapp = true;
-        $scope.oppdatering = false;
+          $scope.regKnapp = false;
+          $scope.visSkjema = true;
+          $scope.visKunder = false;
+          $scope.sendKnapp = true;
+          $scope.oppdatering = false;
         //vis knapper
     }
 
     $scope.lagreSporsmal = function () {
-        var sporsmal = {
-            epost: $scope.epost,
+        var Spørsmal = {
+            email: $scope.email,
             beskrivelse: $scope.beskrivelse
         };
 
-        $http.post(url, sporsmal).
+        $http.post(url, Spørsmal).
             success(function (data) {
                 sporsmalListe();
                 $scope.visFAQ;

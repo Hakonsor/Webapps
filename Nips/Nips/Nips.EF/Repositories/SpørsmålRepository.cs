@@ -87,7 +87,7 @@ namespace Nips.DAL.Repositories
                 {
                     Beskrivelse = spørsmål.Beskrivelse,
                     email = spørsmål.email,
-                    id = spørsmål.kundeid
+                  
                 };
                 Db.Spørsmålene.Add(radspørsmål);
                 Db.SaveChanges();

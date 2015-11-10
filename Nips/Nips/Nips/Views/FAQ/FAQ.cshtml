@@ -2,15 +2,15 @@
 @{
     ViewBag.Title = "FAQ";
 }
-<html ng-app="App">
-        <head>
+
+        
             <link href="~/Content/Custom/Main.css" rel="stylesheet" type="text/css" />
             <script src="../../Scripts/angular.js"></script>
             <script src="~/Scripts/App/faqController.js"></script>
             <title></title>
             <meta charset="utf-8" />
-        </head>
-        <body>
+        
+        <div>
             <div class="container">
                 <div class="jumbotron">
                     <div ng-controller="faqController">
@@ -25,36 +25,39 @@
                                     <td><p>Hvorfor skal jeg bli imponert av dette?</p></td>
                                 </tr>
                         </table>
-                        <form name="skjema">
+                        
                             <table>
                                 <tr>
-                                    <td>Epost</td>
-                                    <td><input name="epost" ng-model="epost"></td>
+                                    <td>Epost:<input placeholder="Epostadresse" name="emailadresse" ng-model="email"></td>
                                 </tr>
                                 <tr>
-                                    <td>Beskrivelse</td>
-                                    <td><input name="beskrivelse" ng-model="beskrivelse"></td>
+                                    <td>
+                                        <textarea placeholder="Skriv spørsmål her" name="testfelt" rows="6" cols="70" ng-model="beskrivelse"> </textarea>
+                                    </td>
                                 </tr>
                             </table>
                             <button ng-click="lagreSporsmal()">Send Sporsmal</button>
-                        </form>
-
+                        
+                        <br />
                         <table>
                             <thead>
                                 <tr>
-                                    <th>EpostAdresse</th>
-                                    <th>Fornavn</th>
+                                    Spørsmål ifra kunder
                                 </tr>
                             </thead>
                             <tbody ng-repeat="sporsmal in alleSporsmal">
                                 <tr>
-                                    <td>{{sporsmol.epost}}</td>
-                                    <td>{{sporsmol.beskrivelse}}</td>
+                                    <td>Epost: {{sporsmal.email}}<br />  <textarea disabled rows="6" cols="70">{{sporsmal.Beskrivelse}}</textarea></td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <button class="btn btn-danger" ng-click="slettSporsmal(sporsmal.id)">Slett</button>
+                                        <button class="btn btn-success" ng-click="endreSporsmal(sporsmal.id)">Endre</button>
+                                    </td>
+                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>      
-        </body>
-</html>
+        </div>

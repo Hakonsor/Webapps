@@ -6,20 +6,15 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Script.Serialization;
-using System.Net.Http.Formatting;
-using System.Data.Common;
 using System.Web.Http;
+using System.Web.Script.Serialization;
 
-
-
-namespace Nips.Controllers.API
+namespace Nips.Controllers
 {
-    public class FAQController : ApiController
+    public class OssController : ApiController
     {
-
+       
+        // GET: FAQ
         private SpørsmålBLL db = new SpørsmålBLL();
         // GET: FAQ
         public HttpResponseMessage Get()
@@ -48,28 +43,29 @@ namespace Nips.Controllers.API
 
         public HttpResponseMessage Post(Spørsmål spørsmål)
         {
-            if (ModelState.IsValid)
-            {
+            System.Diagnostics.Debug.WriteLine("Ja det fungerer");
+            //if (ModelState.IsValid)
+            //{
                 bool OK = db.lagreSpørsmål(spørsmål);
-                if(OK)
+                if (OK)
                 {
                     return new HttpResponseMessage()
                     {
                         StatusCode = HttpStatusCode.OK
                     };
                 }
-            }
+            //}
             return new HttpResponseMessage()
             {
                 StatusCode = HttpStatusCode.NotFound,
-                Content = new StringContent("Fant ikke dette spørsmålet i databasen")
+                Content = new StringContent(" klarte ikke å lagre dette spørsmålet i databasen")
             };
         }
 
         public HttpResponseMessage Put(int id, Spørsmål spørsmål)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 bool OK = db.putSpørsmål(id, spørsmål);
                 if (OK)
                 {
@@ -78,7 +74,7 @@ namespace Nips.Controllers.API
                         StatusCode = HttpStatusCode.OK
                     };
                 }
-            }
+            //}
             return new HttpResponseMessage()
             {
                 StatusCode = HttpStatusCode.NotFound,
@@ -102,6 +98,7 @@ namespace Nips.Controllers.API
                 Content = new StringContent("Fant ikke dette spørsmålet i databasen")
             };
         }
+
 
     }
 }
