@@ -37,6 +37,7 @@
                     @Html.ActionLink("Home", "Front", "Main", new { area = "" }, new { @class = "navbar-brand" })
                     @Html.ActionLink("Om Nips", "About", "About", new { area = "" }, new { @class = "navbar-brand" })
                     @Html.ActionLink("Handlekurven", "Handlevogn", "Handlevogn", new { area = "" }, new { @class = "navbar-brand" })
+                   
                     @if (Session["loggedInUser"] == null)
                     {
                         @Html.ActionLink("Registrer", "Registrer", "Kunde", new { area = "" }, new { @class = "navbar-brand" })
@@ -55,7 +56,8 @@
                             }
                         }
                     }
-              
+                    @Html.ActionLink("FAQ", "FAQ", "FAQ", new { area = "" }, new { @class = "navbar-brand" })
+               <!--<li><<a class="navbar-brand" onclick="window.location.href = '/App/FAQ.html'">FAQ</a>/li>-->
 
 
                 </ul>

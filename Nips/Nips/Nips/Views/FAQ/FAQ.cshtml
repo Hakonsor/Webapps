@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "FAQ";
+}
+<html ng-app="App">
+        <head>
+            <link href="~/Content/Custom/Main.css" rel="stylesheet" type="text/css" />
+            <script src="../../Scripts/angular.js"></script>
+            <script src="~/Scripts/App/faqController.js"></script>
+            <title></title>
+            <meta charset="utf-8" />
+        </head>
+        <body>
+            <div class="container">
+                <div class="jumbotron">
+                    <div ng-controller="faqController">
+                        <h2>FAQ</h2>
+                        <table>                            
+                                <tr>
+                                    <td><p>Hvordan har jeg implementert databasen i Individuell oppgave?</p></td>
+                                    <td><p>Hvordan har jeg implemetert angular?</p></td>
+                                    <td><p>Hvor finner jeg API-controlleren?</p></td>
+                                    <td><p>Hvor finner jeg angular controlleren?</p></td>
+                                    <td><p>Hvorfor ser dette ut som MCV</p></td>
+                                    <td><p>Hvorfor skal jeg bli imponert av dette?</p></td>
+                                </tr>
+                        </table>
+                        <form name="skjema">
+                            <table>
+                                <tr>
+                                    <td>Epost</td>
+                                    <td><input name="epost" ng-model="epost"></td>
+                                </tr>
+                                <tr>
+                                    <td>Beskrivelse</td>
+                                    <td><input name="beskrivelse" ng-model="beskrivelse"></td>
+                                </tr>
+                            </table>
+                            <button ng-click="lagreSporsmal()">Send Sporsmal</button>
+                        </form>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>EpostAdresse</th>
+                                    <th>Fornavn</th>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="sporsmal in alleSporsmal">
+                                <tr>
+                                    <td>{{sporsmol.epost}}</td>
+                                    <td>{{sporsmol.beskrivelse}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>      
+        </body>
+</html>

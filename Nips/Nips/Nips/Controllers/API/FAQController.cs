@@ -3,40 +3,104 @@ using Nips.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Text;
 using System.Web;
-using System.Web.Http;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
+using System.Net.Http.Formatting;
+using System.Data.Common;
+using System.Web.Http;
+
+
 
 namespace Nips.Controllers.API
 {
     public class FAQController : ApiController
     {
 
-        SpørsmålBLL db = new SpørsmålBLL();
+        private SpørsmålBLL db = new SpørsmålBLL();
         // GET: FAQ
-        public List<Spørsmål> Get()
+        public HttpResponseMessage Get()
         {
-            return db.getList();
+            List<Spørsmål> alleSpørsmål = db.getList();
+            var Json = new JavaScriptSerializer();
+            string JsonString = Json.Serialize(alleSpørsmål);
+            return new HttpResponseMessage()
+            {
+                Content = new StringContent(JsonString, Encoding.UTF8, "application/json"),
+                StatusCode = HttpStatusCode.OK
+            };
         }
 
-        public Spørsmål Get(int id)
+        public HttpResponseMessage Get(int id)
         {
-            return db.getSpørsmål(id);
+            Spørsmål alleSpørsmål = db.getSpørsmål(id);
+            var Json = new JavaScriptSerializer();
+            string JsonString = Json.Serialize(alleSpørsmål);
+            return new HttpResponseMessage()
+            {
+                Content = new StringContent(JsonString, Encoding.UTF8, "application/json"),
+                StatusCode = HttpStatusCode.OK
+            };
         }
 
-        public bool Post(Spørsmål spørsmål)
+        public HttpResponseMessage Post(Spørsmål spørsmål)
         {
-            return db.lagreSpørsmål(spørsmål);
+            if (ModelState.IsValid)
+            {
+                bool OK = db.lagreSpørsmål(spørsmål);
+                if(OK)
+                {
+                    return new HttpResponseMessage()
+                    {
+                        StatusCode = HttpStatusCode.OK
+                    };
+                }
+            }
+            return new HttpResponseMessage()
+            {
+                StatusCode = HttpStatusCode.NotFound,
+                Content = new StringContent("Fant ikke dette spørsmålet i databasen")
+            };
         }
 
-        public bool Put(int id, Spørsmål spørsmål)
+        public HttpResponseMessage Put(int id, Spørsmål spørsmål)
         {
-            return db.putSpørsmål(id, spørsmål);
+            if (ModelState.IsValid)
+            {
+                bool OK = db.putSpørsmål(id, spørsmål);
+                if (OK)
+                {
+                    return new HttpResponseMessage()
+                    {
+                        StatusCode = HttpStatusCode.OK
+                    };
+                }
+            }
+            return new HttpResponseMessage()
+            {
+                StatusCode = HttpStatusCode.NotFound,
+                Content = new StringContent("Fant ikke dette spørsmålet i databasen")
+            };
         }
 
-        public bool Delete(int id)
+        public HttpResponseMessage Delete(int id)
         {
-            return db.deteleSpørsmål(id);
+            bool OK = db.deteleSpørsmål(id);
+            if (OK)
+            {
+                return new HttpResponseMessage()
+                {
+                    StatusCode = HttpStatusCode.OK
+                };
+            }
+            return new HttpResponseMessage()
+            {
+                StatusCode = HttpStatusCode.NotFound,
+                Content = new StringContent("Fant ikke dette spørsmålet i databasen")
+            };
         }
 
     }
