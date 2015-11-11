@@ -9,7 +9,6 @@
             <script src="~/Scripts/App/faqController.js"></script>
             <title></title>
             <meta charset="utf-8" />
-        
         <div>
             <div class="container">
                 <div class="jumbotron">
@@ -27,14 +26,47 @@
                         <div ng-show="FAQ">
                             <table>
                                 <tr>
-                                    <td><p>Oppagven</p></td>
-                                    <td><p>Hvordan registrerer jeg en Kunde?</p></td>
-                                    <td><p>Hvor finner jeg API-controlleren?</p></td>
-                                    <td><p>Hvor finner jeg angular controlleren?</p></td>
-                                    <td><p>Hvorfor ser dette ut som MCV</p></td>
-                                    <td><p>Hvorfor skal jeg bli imponert av dette?</p></td>
+                                    <td><button class="btn btn-default" ng-click="viskategori1()">Kunde</button></td>
+                                    <td><button class="btn btn-default" ng-click="viskategori2()">API-controlleren</button></td>
+                                    <td><button class="btn btn-default" ng-click="viskategori3()">Angular controlleren?</button></td>
+                                    <td><button class="btn btn-default" ng-click="viskategori4()">MCV</button></td>
                                 </tr>
                             </table>
+                            <br />
+                            <div ng-show="kategori1">
+                                <h2>Hvordan registrer jeg meg?</h2>
+                                <p>Du trykker på registrer, og fyller ut feltende. Hvis et av feltene ikke innhoder gyldig informasjon vil du få beskjed om det</p>
+                                <h2>Hvordan kjøper jeg en vare?</h2>
+                                <p>Du kan velge varene du ønsker å kjøpe på Home. Her kan du velge et produkt du liker og legge dem i handle kurven din. Får å kjøpe varene i handlekurven, må du logge inn. </p>
+                                <h2>Når kan jeg forvente å motta varen?</h2>
+                                <p>Aldri </p>
+                                <h2>Hvem skal jeg klage til?</h2>
+                                <p>Du kan sende inn spørmål på denne siden, men disse spørsmålene vil aldri bli behandlet noen sinne. Derfor anbefaler vi at du sender alle klagene dine til Sentralbord: 67 23 50 00 (kl. 08.00-15.45) </p>
+                                <h2>Hvordan kan jeg angre et kjøp hos dere?</h2>
+                                <p>Du kan ikke angre og du får ikke pengene dine tilbake, de er våre nå  :)</p>
+                             </div>
+                            <div ng-show="kategori2">
+                                <h2>Hvor finner jeg API-controlleren?</h2>
+                                <p>Api kontrolleren kan du finne under nips/Controllers/API/FAQController</p>
+                                <h2>Gruker du anguler i denne kontrolleren?</h2>
+                                <p>Ja, metodene heter Get, Set, Delete for at anguler kan finne dem og fente informasjon ifra databasen  </p>
+                                
+                            </div>
+                            <div ng-show="kategori3">
+                                <h2>Hvor finner jeg angular kontrolleren?</h2>
+                                <p>finner du under Nips/Scripts/App/faqController.js</p>
+                                <h2>Hiser du forstårelse for denne nye teknologien?</h2>
+                                <p>Ja, jeg syntes det</p>
+
+                            </div>
+                            <div ng-show="kategori4">
+                               <h2>Har du forstått MVC</h2>
+                               <p>Ja, jeg syntes det</p>
+                                <h2>Hvordan har du implementert databasen</h2>
+                                <p>Jeg har lagt til en ny rad klasse kalt Spørsmålene, erkert den inn i DataService som arver DbContext. Laget en ny model klasse med regex og skrevet et nytt repository kalt SpørsmålReository. API kontrolleren kaller på SpørsmålBll som igjen kaller på Spøersmålrepository. Jeg har ikke implementer flere units tester fordi det er ikke en del av oppgaven.</p>
+                                <h2>hvordan har du implementer repository?</h2>
+                                <p>Det jeg sa over, lær deg å les</p>
+                             </div>
                         </div>
                         <div ng-show="Sporsmal">
                             <p>Still oss et spørmål</p>
@@ -44,13 +76,13 @@
                                         <tr>
                                             <td>
                                                 Epost:
-                                                <input placeholder="Epostadresse" name="email" ng-model="email" ng-required="true" ng-pattern="/^([\w-]+(?:\.[\w-]+)*)((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/">
+                                                <input placeholder="Epostadresse" name="email" ng-model="email" ng-required="true" ng-pattern=$scope.email> <!-- Fikk ikke lov til å skirve krøllalfa fordi dette er et cshtml dokument-->
                                                 <p class="label label-info" ng-show="skjema.email.$invalid && skjema.email.$dirty">Skriv inn en gyldig epostadresse</p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <textarea placeholder="Skriv spørsmål her" name="beskrivelse" rows="6" cols="70" ng-pattern="^\((?!\s*\)).+\)$" ng-model="beskrivelse"> </textarea>
+                                                <textarea placeholder="Skriv spørsmål her" name="beskrivelse" rows="6" cols="70" ng-pattern="/(.$)/" ng-model="beskrivelse"> </textarea>
                                                 <p class="label label-info" ng-show="skjema.beskrivelse.$invalid && skjema.beskrivelse.$dirty">Skriv inn et lovlig etternavn</p>
                                             </td>
                                         </tr>
@@ -66,19 +98,44 @@
                                     <tr>
                                         Spørsmål ifra kunder
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            <div ng-show="laster">
+                                                <h3>Laster... vennligst vent.</h3>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </thead>
+                                
                                 <tbody ng-repeat="sporsmal in alleSporsmal">
                                     <tr>
                                         <td>Epost: {{sporsmal.email}}<br />  <textarea disabled rows="6" cols="70">{{sporsmal.Beskrivelse}}</textarea></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <button class="btn btn-warning"  ng-click="sletteSporsmal(sporsmal.kundeid)" >Slett</button>
+                                            <button class="btn btn-warning"  ng-click="setTempid(sporsmal.kundeid)" data-toggle="modal" data-target="#myModal">Slett</button>
                                             <!--<button class="btn btn-success" ng-click="endreSporsmal(sporsmal.kundeid)">Endre</button>-->
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Slett</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Er du sikker på at du vil slette dette spørsmålet?.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="sletteSporsmal()">Slett</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div> 
                 </div>
