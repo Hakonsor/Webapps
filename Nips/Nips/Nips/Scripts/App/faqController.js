@@ -13,8 +13,7 @@ App.controller("faqController", function ($scope, $http) {
             console.log(status + data);
         });
     };
-    $scope.emailPattern = "/^[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]@[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/";
-
+    
     start = function () {
         $scope.email = "";
         $scope.beskrivelse = "";
