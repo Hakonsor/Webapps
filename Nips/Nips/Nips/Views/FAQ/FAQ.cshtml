@@ -15,49 +15,72 @@
                 <div class="jumbotron">
                     <div ng-controller="faqController">
                         <h2>FAQ</h2>
-                        <table>                            
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="" ng-click="visFAQ()">FAQ</a></li>
+                                    <li><a href="" ng-click="visListe()">Liste</a></li>
+                                    <li><a href="" ng-click="visSporsmal()">Kontakt oss</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <div ng-show="FAQ">
+                            <table>
                                 <tr>
-                                    <td><p>Hvordan har jeg implementert databasen i Individuell oppgave?</p></td>
-                                    <td><p>Hvordan har jeg implemetert angular?</p></td>
+                                    <td><p>Oppagven</p></td>
+                                    <td><p>Hvordan registrerer jeg en Kunde?</p></td>
                                     <td><p>Hvor finner jeg API-controlleren?</p></td>
                                     <td><p>Hvor finner jeg angular controlleren?</p></td>
                                     <td><p>Hvorfor ser dette ut som MCV</p></td>
                                     <td><p>Hvorfor skal jeg bli imponert av dette?</p></td>
                                 </tr>
-                        </table>
-                        
-                            <table>
-                                <tr>
-                                    <td>Epost:<input placeholder="Epostadresse" name="emailadresse" ng-model="email"></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <textarea placeholder="Skriv spørsmål her" name="testfelt" rows="6" cols="70" ng-model="beskrivelse"> </textarea>
-                                    </td>
-                                </tr>
                             </table>
-                            <button ng-click="lagreSporsmal()">Send Sporsmal</button>
-                        
-                        <br />
-                        <table>
-                            <thead>
-                                <tr>
-                                    Spørsmål ifra kunder
-                                </tr>
-                            </thead>
-                            <tbody ng-repeat="sporsmal in alleSporsmal">
-                                <tr>
-                                    <td>Epost: {{sporsmal.email}}<br />  <textarea disabled rows="6" cols="70">{{sporsmal.Beskrivelse}}</textarea></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button class="btn btn-danger" ng-click="slettSporsmal(sporsmal.id)">Slett</button>
-                                        <button class="btn btn-success" ng-click="endreSporsmal(sporsmal.id)">Endre</button>
-                                    </td>
-                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                        </div>
+                        <div ng-show="Sporsmal">
+                            <p>Still oss et spørmål</p>
+                            <form name="skjema">
+                                <div class="form-group">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                Epost:
+                                                <input placeholder="Epostadresse" name="email" ng-model="email" ng-required="true" ng-pattern="/^([\w-]+(?:\.[\w-]+)*)((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/">
+                                                <p class="label label-info" ng-show="skjema.email.$invalid && skjema.email.$dirty">Skriv inn en gyldig epostadresse</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <textarea placeholder="Skriv spørsmål her" name="beskrivelse" rows="6" cols="70" ng-pattern="^\((?!\s*\)).+\)$" ng-model="beskrivelse"> </textarea>
+                                                <p class="label label-info" ng-show="skjema.beskrivelse.$invalid && skjema.beskrivelse.$dirty">Skriv inn et lovlig etternavn</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <button class="btn btn-default" ng-click="lagreSporsmal()">Send Sporsmal</button>
+                            </form>
+                        </div>
+                        <div ng-show="Liste">
+                            <br />
+                            <table>
+                                <thead>
+                                    <tr>
+                                        Spørsmål ifra kunder
+                                    </tr>
+                                </thead>
+                                <tbody ng-repeat="sporsmal in alleSporsmal">
+                                    <tr>
+                                        <td>Epost: {{sporsmal.email}}<br />  <textarea disabled rows="6" cols="70">{{sporsmal.Beskrivelse}}</textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button class="btn btn-warning"  ng-click="sletteSporsmal(sporsmal.kundeid)" >Slett</button>
+                                            <!--<button class="btn btn-success" ng-click="endreSporsmal(sporsmal.kundeid)">Endre</button>-->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
                 </div>
             </div>      
         </div>

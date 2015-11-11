@@ -43,9 +43,9 @@ namespace BLL
             return _repository.putSpørsmål(id, spørsmål);
         }
 
-        public bool deteleSpørsmål(int id)
+        public bool deleteSpørsmål(int id)
         {
-            return _repository.deteleSpørsmål(id);
+            return _repository.deleteSpørsmål(id);
         }
     }
 

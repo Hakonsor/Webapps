@@ -11,7 +11,7 @@ using System.Web.Script.Serialization;
 
 namespace Nips.Controllers
 {
-    public class OssController : ApiController
+    public class FAQController : ApiController
     {
        
         // GET: FAQ
@@ -43,9 +43,9 @@ namespace Nips.Controllers
 
         public HttpResponseMessage Post(Spørsmål spørsmål)
         {
-            System.Diagnostics.Debug.WriteLine("Ja det fungerer");
-            //if (ModelState.IsValid)
-            //{
+            
+            if (ModelState.IsValid)
+            {
                 bool OK = db.lagreSpørsmål(spørsmål);
                 if (OK)
                 {
@@ -54,7 +54,7 @@ namespace Nips.Controllers
                         StatusCode = HttpStatusCode.OK
                     };
                 }
-            //}
+            }
             return new HttpResponseMessage()
             {
                 StatusCode = HttpStatusCode.NotFound,
@@ -64,8 +64,8 @@ namespace Nips.Controllers
 
         public HttpResponseMessage Put(int id, Spørsmål spørsmål)
         {
-            //if (ModelState.IsValid)
-            //{
+            if (ModelState.IsValid)
+            {
                 bool OK = db.putSpørsmål(id, spørsmål);
                 if (OK)
                 {
@@ -74,7 +74,7 @@ namespace Nips.Controllers
                         StatusCode = HttpStatusCode.OK
                     };
                 }
-            //}
+            }
             return new HttpResponseMessage()
             {
                 StatusCode = HttpStatusCode.NotFound,
@@ -84,7 +84,7 @@ namespace Nips.Controllers
 
         public HttpResponseMessage Delete(int id)
         {
-            bool OK = db.deteleSpørsmål(id);
+            bool OK = db.deleteSpørsmål(id);
             if (OK)
             {
                 return new HttpResponseMessage()

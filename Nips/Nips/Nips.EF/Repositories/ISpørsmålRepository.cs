@@ -15,6 +15,6 @@ namespace Nips.DAL.Repositories
         List<Spørsmål> getList();
         Spørsmål getSpørsmål(String epost);
         bool putSpørsmål(int id, Spørsmål spørsmål);
-        bool deteleSpørsmål(int id);
+        bool deleteSpørsmål(int id);
     }
 }

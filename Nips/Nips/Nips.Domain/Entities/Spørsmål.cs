@@ -13,7 +13,7 @@ namespace Nips.Domain.Entities
         public int kundeid { get; set; }
         [Display(Name = "Email")]
         [Required(ErrorMessage = "Email må oppgis")]
-        //[RegularExpression(@"(^[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]@[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$)", ErrorMessage = "Ugyldig email")]
+        [RegularExpression(@"(^[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]@[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$)", ErrorMessage = "Ugyldig email")]
         public String email { get; set; }
         [Display(Name = "Beskrivelse")]
         [Required(ErrorMessage = "Beskrivelse må oppgis")]

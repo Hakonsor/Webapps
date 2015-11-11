@@ -11,7 +11,7 @@ namespace Nips.DAL.Repositories
 {
     public class SpørsmålRepository : ISpørsmålRepository
     {
-        public bool deteleSpørsmål(int id)
+        public bool deleteSpørsmål(int id)
         {
             try
             {
