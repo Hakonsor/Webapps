@@ -11,6 +11,7 @@ namespace Nips.Controllers.WEB
         // GET: FAQ
         public ActionResult FAQ()
         {
+            ViewBag.alfa = "@";
             return View();
         }
     }

@@ -34,39 +34,133 @@
                             </table>
                             <br />
                             <div ng-show="kategori1">
-                                <h2>Hvordan registrer jeg meg?</h2>
-                                <p>Du trykker på registrer, og fyller ut feltende. Hvis et av feltene ikke innhoder gyldig informasjon vil du få beskjed om det</p>
-                                <h2>Hvordan kjøper jeg en vare?</h2>
-                                <p>Du kan velge varene du ønsker å kjøpe på Home. Her kan du velge et produkt du liker og legge dem i handle kurven din. Får å kjøpe varene i handlekurven, må du logge inn. </p>
-                                <h2>Når kan jeg forvente å motta varen?</h2>
-                                <p>Aldri </p>
-                                <h2>Hvem skal jeg klage til?</h2>
-                                <p>Du kan sende inn spørmål på denne siden, men disse spørsmålene vil aldri bli behandlet noen sinne. Derfor anbefaler vi at du sender alle klagene dine til Sentralbord: 67 23 50 00 (kl. 08.00-15.45) </p>
-                                <h2>Hvordan kan jeg angre et kjøp hos dere?</h2>
-                                <p>Du kan ikke angre og du får ikke pengene dine tilbake, de er våre nå  :)</p>
-                             </div>
+                                <ul>
+                                        <li>
+                                            <h2>Hvordan registrer jeg meg?</h2>
+                                            <p>Du trykker på registrer, og fyller ut feltende. Hvis et av feltene ikke innhoder gyldig informasjon vil du få beskjed om det</p>
+                                            <a href="" ng-click="visKategori1Spormal1()">Les mer</a>
+                                            <div ng-show="kategori1Spormal1">
+                                                test tes testtt
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h2>Hvordan kjøper jeg en vare?</h2>
+                                            <p>
+                                                Du kan velge varene du ønsker å kjøpe på Home. Her kan du velge et produkt du liker og legge dem i handle kurven din. Får å kjøpe varene i handlekurven, må du logge inn.
+                                            </p>
+                                            <a href="" ng-click="visKategori1Spormal2()">Les mer</a>
+                                            <div ng-show="kategori1Spormal2">
+                                                teate
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h2>Når kan jeg forvente å motta varen?</h2>
+                                            <p>
+                                                Aldri
+                                            </p>
+                                            <a href="" ng-click="visKategori1Spormal3()">Les mer</a>
+                                            <div ng-show="kategori1Spormal3">
+                                                trsd
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h2>Hvem skal jeg klage til?</h2>
+                                            <p>
+                                               Du kan sende inn spørmål på denne siden, men disse spørsmålene vil aldri bli behandlet noen sinne. Derfor anbefaler vi at du sender alle klagene dine til Sentralbord: 67 23 50 00 (kl. 08.00-15.45) 
+                                            </p> 
+                                            <a href="http://www.hioa.no/Kontakt-oss">Gå hit</a>
+                                        </li>
+                                        <li>
+                                            <h2>Hvordan kan jeg angre et kjøp hos dere?</h2>
+                                            <p>
+                                                Du kan ikke angre og du får ikke pengene dine tilbake, de er våre nå  :)
+                                            </p>
+                                            <a href="http://www.forbrukerradet.no/forside/okonomi-og-betaling/svindel-2/">Gå hit</a>
+                                        </li></ul>
+                            </div>
                             <div ng-show="kategori2">
-                                <h2>Hvor finner jeg API-controlleren?</h2>
-                                <p>Api kontrolleren kan du finne under nips/Controllers/API/FAQController</p>
-                                <h2>Gruker du anguler i denne kontrolleren?</h2>
-                                <p>Ja, metodene heter Get, Set, Delete for at anguler kan finne dem og fente informasjon ifra databasen  </p>
-                                
+                                <ul>
+                                    <li>
+                                        <h2>Hvor finner jeg API-controlleren?</h2>
+                                        <p>
+                                            Api kontrolleren kan du finne under nips/Controllers/API/FAQController
+                                        </p>
+                                        <a href="" ng-click="visKategori2Spormal1()">Les mer</a>
+                                        <div ng-show="kategori2Spormal1">
+
+                                            etst
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <h2>bruker anguler denne kontrolleren?</h2>
+                                        <p>
+                                            Ja, metodene heter Get, Set, Delete for at anguler kan finne dem og fente informasjon ifra databasen  
+                                        </p>
+                                        <a href="" ng-click="visKategori2Spormal2()">Les mer</a>
+                                        <div ng-show="kategori2Spormal2">
+
+                                            sset
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                             <div ng-show="kategori3">
-                                <h2>Hvor finner jeg angular kontrolleren?</h2>
-                                <p>finner du under Nips/Scripts/App/faqController.js</p>
-                                <h2>Hiser du forstårelse for denne nye teknologien?</h2>
-                                <p>Ja, jeg syntes det</p>
-
+                                <ul>
+                                    <li>
+                                        <h2>Hvor finner jeg angular kontrolleren?</h2>
+                                        <p>
+                                            finner du under Nips/Scripts/App/faqController.js
+                                        </p>
+                                        <a href="" ng-click="visKategori3Spormal1()">Les mer</a>
+                                        <div ng-show="kategori3Spormal1">
+                                            tetse
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h2>Hiser du forstårelse for denne nye teknologien?</h2>
+                                        <p>
+                                            Ja, jeg syntes det
+                                        </p>
+                                        <a href="" ng-click="visKategori3Spormal2()">Les mer</a>
+                                        <div ng-show="kategori3Spormal2">
+                                            tse
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                             <div ng-show="kategori4">
-                               <h2>Har du forstått MVC</h2>
-                               <p>Ja, jeg syntes det</p>
-                                <h2>Hvordan har du implementert databasen</h2>
-                                <p>Jeg har lagt til en ny rad klasse kalt Spørsmålene, erkert den inn i DataService som arver DbContext. Laget en ny model klasse med regex og skrevet et nytt repository kalt SpørsmålReository. API kontrolleren kaller på SpørsmålBll som igjen kaller på Spøersmålrepository. Jeg har ikke implementer flere units tester fordi det er ikke en del av oppgaven.</p>
-                                <h2>hvordan har du implementer repository?</h2>
-                                <p>Det jeg sa over, lær deg å les</p>
-                             </div>
+                                <ul>
+                                    <li>
+                                        <h2>Har du forstått MVC?</h2>
+                                        <p>
+                                        Ja, jeg syntes det
+                                        </p>
+                                        <a href="" ng-click="visKategori4Spormal1()">Les mer</a>
+                                        <div ng-show="kategori4Spormal1">
+                                            Test test
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h2>Hvordan har du implementert databasen</h2>
+                                        <p>
+                                            Jeg har lagt til en ny rad klasse kalt Spørsmålene, erkert den inn i DataService som arver DbContext. Laget en ny model klasse med regex og skrevet et nytt repository kalt SpørsmålReository. API kontrolleren kaller på SpørsmålBll som igjen kaller på Spøersmålrepository. Jeg har ikke implementer flere units tester fordi det er ikke en del av oppgaven.
+                                        </p>
+                                        <a href="" ng-click="visKategori4Spormal2()">Les mer</a>
+                                        <div ng-show="kategori4Spormal2">
+                                            ste
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h2>hvordan har du implementer repository?</h2>
+                                        <p>Det jeg sa over, lær deg å les</p>
+                                        <a href="" ng-click="visKategori4Spormal2()">Les mer</a>
+                                       
+                                    </li>
+                               </ul>
+                            </div>
                         </div>
                         <div ng-show="Sporsmal">
                             <p>Still oss et spørmål</p>
@@ -76,8 +170,8 @@
                                         <tr>
                                             <td>
                                                 Epost:
-                                                <input placeholder="Epostadresse" name="email" ng-model="email" ng-required="true" ng-pattern=$scope.email> <!-- Fikk ikke lov til å skirve krøllalfa fordi dette er et cshtml dokument-->
-                                                <p class="label label-info" ng-show="skjema.email.$invalid && skjema.email.$dirty">Skriv inn en gyldig epostadresse</p>
+                                                <input placeholder="Epostadresse" name="email" ng-model="email" ng-required="true" ng-pattern="/^[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ].[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/"> <!-- Fikk ikke lov til å skirve krøllalfa fordi dette er et cshtml dokument-->
+                                                <p class="label label-info" ng-show="skjema.email.$invalid && skjema.email.$dirty">Skriv inn en gyldig epostadresse.</p>
                                             </td>
                                         </tr>
                                         <tr>
