@@ -13,7 +13,13 @@ namespace Nips.DAL.Entities
         public int id { get; set; }
        
         public String email { get; set; }
+
+        public String svar { get; set; }
+        public String kategori { get; set; }
        
         public String Beskrivelse { get; set; }
+
+
+        public String Tema { get; set; }
     }
 }

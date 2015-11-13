@@ -37,7 +37,11 @@ namespace Nips.DAL.Repositories
                              {
                                  Beskrivelse = v.Beskrivelse,
                                  email = v.email,
-                                 kundeid = v.id
+                                 kundeid = v.id,
+                                 Kategori = v.kategori,
+                                 Svar = v.svar,
+                                 Tema = v.Tema
+
                              })
                              .ToList();
                 return liste;
@@ -60,7 +64,10 @@ namespace Nips.DAL.Repositories
                 {
                     kundeid = radspørsmål.id,
                     email = radspørsmål.email,
-                    Beskrivelse = radspørsmål.Beskrivelse
+                    Beskrivelse = radspørsmål.Beskrivelse,
+                    Kategori = radspørsmål.kategori,
+                    Svar = radspørsmål.svar,
+                    Tema = radspørsmål.Tema
                 };
                 return spørsmål;
             }
@@ -74,7 +81,11 @@ namespace Nips.DAL.Repositories
             {
                 kundeid = radspørsmål.id,
                 email = radspørsmål.email,
-                Beskrivelse = radspørsmål.Beskrivelse
+                Beskrivelse = radspørsmål.Beskrivelse,
+                Kategori = radspørsmål.kategori,
+                Svar = radspørsmål.svar,
+                Tema = radspørsmål.Tema
+
             };
             return spørsmål;
         }
@@ -87,7 +98,10 @@ namespace Nips.DAL.Repositories
                 {
                     Beskrivelse = spørsmål.Beskrivelse,
                     email = spørsmål.email,
-                  
+                    kategori = spørsmål.Kategori,
+                    svar = spørsmål.Svar,
+                    Tema = spørsmål.Tema
+
                 };
                 Db.Spørsmålene.Add(radspørsmål);
                 Db.SaveChanges();
@@ -112,7 +126,8 @@ namespace Nips.DAL.Repositories
                 {
                     Beskrivelse = spørsmål.Beskrivelse,
                     email = spørsmål.email,
-                    id = spørsmål.kundeid
+                    kategori = spørsmål.Kategori,
+                    svar = spørsmål.Svar
                 };
                 var rad = Db.Spørsmålene.Find(id);
                 rad = radspørsmål;

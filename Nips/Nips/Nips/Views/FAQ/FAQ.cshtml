@@ -23,245 +23,233 @@
                                 </ul>
                             </div>
                         </nav>
-                        <div ng-show="FAQ">
-                            <table>
-                                <tr>
-                                    <td><button class="btn btn-default" ng-click="viskategori1()">Kunde</button></td>
-                                    <td><button class="btn btn-default" ng-click="viskategori2()">API-controlleren</button></td>
-                                    <td><button class="btn btn-default" ng-click="viskategori3()">Angular controlleren?</button></td>
-                                    <td><button class="btn btn-default" ng-click="viskategori4()">MCV</button></td>
-                                </tr>
-                            </table>
-                            <br />
-                            <div ng-show="kategori1">
-                                <ul>
-                                        <li>
-                                            <h2>Hvordan registrer jeg meg?</h2>
-                                            <p>Du trykker på registrer, og fyller ut feltende. Hvis et av feltene ikke innhoder gyldig informasjon vil du få beskjed om det</p>
-                                            <a href="" ng-click="visKategori1Spormal1()">Les mer</a>
-                                            <div ng-show="kategori1Spormal1">
-                                                <img src="~/Content/img/FAQ/reg.PNG" />
-                                                <p class="alert alert-danger"> Først går du til navn menyen og så trykker på registrer</p>
-
-                                                <img src="~/Content/img/FAQ/regkund.PNG" />
-                                                <p class="alert alert-danger"> Deretter Fyller du ut alle feltene og trykke registrer</p>
-                                                <p class="alert alert-danger">???</p>
-                                                <p class="alert alert-danger">profit</p>
-                                                <a href="" ng-click="visKategori1Spormal1()">lukk</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <h2>Hvordan kjøper jeg en vare?</h2>
-                                            <p>
-                                                Du kan velge varene du ønsker å kjøpe på Home. Her kan du velge et produkt du liker og legge dem i handle kurven din. Får å kjøpe varene i handlekurven, må du logge inn.
-                                            </p>
-                                            <a href="" ng-click="visKategori1Spormal2()">Les mer</a>
-                                            <div ng-show="kategori1Spormal2">
-
-                                                <img src="~/Content/img/FAQ/finnhome.PNG" />
-                                                <p class="alert alert-danger"> Trykke på home</p>
-                                                <img src="~/Content/img/FAQ/bestillloff.PNG" />
-                                                <p class="alert alert-danger">Bestill en vare</p>
-                                                <img src="~/Content/img/FAQ/betillloffigjen.PNG" />
-                                                <p class="alert alert-danger">Bestill igjen</p>
-                                                <img src="~/Content/img/FAQ/chechout logg.PNG" />
-                                                <p class="alert alert-danger">Trykke på checkinn, hvis du ikke er logget inn så gjør det. Trykk på handlevogn etter å ha logget inn</p>
-                                                <img src="~/Content/img/FAQ/betaling.PNG" />
-                                                <p class="alert alert-danger">Tast inn kredit informasjon</p>
-                                                <img src="~/Content/img/FAQ/kvitering.PNG" />
-                                                <p class="alert alert-danger">Hvis du ser kviteringen så er bestilingene din registrert</p>
-                                                <a href="" ng-click="visKategori1Spormal2()">lukk</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <h2>Når kan jeg forvente å motta varen?</h2>
-                                            <p >
-                                                Aldri
-                                            </p>
-                                            <a href="" ng-click="visKategori1Spormal3()">Les mer</a>
-                                            <div ng-show="kategori1Spormal3">
-                                                
-                                                <img src="~/Content/img/logo/Logo.png" />
-
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <h2>Hvem skal jeg klage til?</h2>
-                                            <p>
-                                               Du kan sende inn spørmål på denne siden, men disse spørsmålene vil aldri bli behandlet noen sinne. Derfor anbefaler vi at du sender alle klagene dine til Sentralbord: 67 23 50 00 (kl. 08.00-15.45) 
-                                            </p> 
-                                            <a href="http://www.hioa.no/Kontakt-oss">Gå hit</a>
-                                        </li>
-                                        <li>
-                                            <h2>Hvordan kan jeg angre et kjøp hos dere?</h2>
-                                            <p>
-                                                Du kan ikke angre og du får ikke pengene dine tilbake, de er våre nå  :)
-                                            </p>
-                                            <a href="http://www.forbrukerradet.no/forside/okonomi-og-betaling/svindel-2/">Gå hit</a>
-                                        </li></ul>
-                            </div>
-                            <div ng-show="kategori2">
-                                <ul>
-                                    <li>
-                                        <h2>Hvor finner jeg API-controlleren?</h2>
-                                        <p>
-                                            Api kontrolleren kan du finne under nips/Controllers/API/FAQController
-                                        </p>
-                                        <a href="" ng-click="visKategori2Spormal1()">Les mer</a>
-                                        <div ng-show="kategori2Spormal1">
-                                            <br />
-                                            <img src="~/Content/img/FAQ/API kontoller.PNG" />
-                                            <a href="" ng-click="visKategori2Spormal1()">lukk</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <h2>bruker anguler denne kontrolleren?</h2>
-                                        <p>
-                                            Ja, metodene heter Get, Set, Delete for at anguler kan finne dem og fente informasjon ifra databasen  
-                                        </p>
-                                        <a href="" ng-click="visKategori2Spormal2()">Les mer</a>
-                                        <div ng-show="kategori2Spormal2">
-                                            <img src="~/Content/img/FAQ/Api angular.PNG" />
-                                            <a href="" ng-click="visKategori2Spormal2()">lukk</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div ng-show="kategori3">
-                                <ul>
-                                    <li>
-                                        <h2>Hvor finner jeg angular kontrolleren?</h2>
-                                        <p>
-                                            finner du under Nips/Scripts/App/faqController.js
-                                        </p>
-                                        <a href="" ng-click="visKategori3Spormal1()">Les mer</a>
-                                        <div ng-show="kategori3Spormal1">
-                                            <img src="~/Content/img/FAQ/Angular.PNG" />
-                                            <a href="" ng-click="visKategori3Spormal1()">Lukk</a>
-                                        </div>
-                                        
-                                    </li>
-                                    <li>
-                                        <h2>Hiser du forstårelse for denne nye teknologien?</h2>
-                                        <p>
-                                            Ja, jeg syntes det
-                                        </p>
-                                        <a href="" ng-click="visKategori3Spormal2()">Les mer</a>
-                                        <div ng-show="kategori3Spormal2">
-                                           :)
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div ng-show="kategori4">
-                                <ul>
-                                    <li>
-                                        <h2>Har du forstått MVC?</h2>
-                                        <p>
-                                        Ja, jeg syntes det
-                                        </p>
-                                        <a href="" ng-click="visKategori4Spormal1()">Les mer</a>
-                                        <div ng-show="kategori4Spormal1">
-                                            :)
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h2>Hvordan har du implementert databasen</h2>
-                                        <p>
-                                            Jeg har lagt til en ny rad klasse kalt Spørsmålene, erkert den inn i DataService som arver DbContext. Laget en ny model klasse med regex og skrevet et nytt repository kalt SpørsmålReository. API kontrolleren kaller på SpørsmålBll som igjen kaller på Spøersmålrepository. Jeg har ikke implementert flere units tester fordi det er ikke en del av oppgaven.
-                                        </p>
-                                        <a href="" ng-click="visKategori4Spormal2()">Les mer</a>
-                                        <div ng-show="kategori4Spormal2">
-
-                                            <img src="~/Content/img/FAQ/dataservice.PNG" />
-                                            <p></p>
-                                            <img src="~/Content/img/FAQ/spørsmålrepository.PNG" />
-
-                                            <a href="" ng-click="visKategori4Spormal2()">lukk</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h2>hvordan har du implementer repository?</h2>
-                                        <p>Det jeg sa over, lær deg å les</p>
-                                        <a href="" ng-click="visKategori4Spormal2()">Les mer</a>
-
-                                      
-                                    </li>
-                               </ul>
-                            </div>
-                        </div>
-                        <div ng-show="Sporsmal">
-                            <p>Still oss et spørmål</p>
-                            <form name="skjema">
-                                <div class="form-group">
+                       
+                            <div ng-show="FAQ">
+                                <table>
+                                    <tr>
+                                        <td><button class="btn btn-default" ng-click="viskategori1()">Kunde</button></td>
+                                        <td><button class="btn btn-default" ng-click="viskategori2()">API-controlleren</button></td>
+                                        <td><button class="btn btn-default" ng-click="viskategori3()">Angular controlleren?</button></td>
+                                        <td><button class="btn btn-default" ng-click="viskategori4()">MCV</button></td>
+                                    </tr>
+                                </table>
+                                <br />
+                                <div ng-show="kategori1">
                                     <table>
-                                        <tr>
-                                            <td>
-                                                Epost:
-                                                <input placeholder="Epostadresse" name="email" ng-model="email" ng-required="true" ng-pattern="/^[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ].[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/"> <!-- Fikk ikke lov til å skirve krøllalfa fordi dette er et cshtml dokument-->
-                                                <p class="label label-info" ng-show="skjema.email.$invalid && skjema.email.$dirty">Skriv inn en gyldig epostadresse.</p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <textarea placeholder="Skriv spørsmål her" name="beskrivelse" rows="6" cols="70" ng-pattern="/(.$)/" ng-model="beskrivelse"> </textarea>
-                                                <p class="label label-info" ng-show="skjema.beskrivelse.$invalid && skjema.beskrivelse.$dirty">Skriv inn et lovlig etternavn</p>
-                                            </td>
-                                        </tr>
+                                        <thead>
+                                            <tr>
+                                                <td>
+                                                    <div ng-show="laster">
+                                                        <h3>Laster... vennligst vent.</h3>
+                                                    </div>
+                                                </td>{{sporsmal.Beskrivelse}}
+                                            </tr>
+                                        </thead>
+                                        <tbody ng-init="loading=[]" ng-repeat="sporsmal in alleKategori1">
+                                            <tr>
+                                                <td>
+
+                                                    <h2>{{sporsmal.Beskrivelse}}</h2>
+                                                    <a href="" ng-click="loading[$index]=true">Les mer</a>
+                                                    <div ng-show="loading[$index]">
+                                                        {{sporsmal.Svar}}<br />  
+                                                        <a href="" ng-click="loading[$index]=false">lukk</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                   </div>
+                                <div ng-show="kategori2">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <td>
+                                                    <div ng-show="laster">
+                                                        <h3>Laster... vennligst vent.</h3>
+                                                    </div>
+                                                </td>{{sporsmal.Beskrivelse}}
+                                            </tr>
+                                        </thead>
+                                        <tbody ng-init="loading=[]" ng-repeat="sporsmal in alleKategori2">
+                                            <tr>
+                                                <td>
+
+                                                    <h2>{{sporsmal.Beskrivelse}}</h2>
+                                                    <a href="" ng-click="loading[$index]=true">Les mer</a>
+                                                    <div ng-show="loading[$index]">
+                                                        {{sporsmal.Svar}}<br />  
+                                                        <a href="" ng-click="loading[$index]=false">lukk</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 </div>
-                                <button class="btn btn-default" ng-click="lagreSporsmal()">Send Sporsmal</button>
-                            </form>
-                        </div>
-                        <div ng-show="Liste">
-                            <br />
-                            <table>
-                                <thead>
-                                    <tr>
-                                        Spørsmål ifra kunder
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div ng-show="laster">
-                                                <h3>Laster... vennligst vent.</h3>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </thead>
-                                
-                                <tbody ng-repeat="sporsmal in alleSporsmal">
-                                    <tr>
-                                        <td>Epost: {{sporsmal.email}}<br />  <textarea disabled rows="6" cols="70">{{sporsmal.Beskrivelse}}</textarea></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <button class="btn btn-warning"  ng-click="setTempid(sporsmal.kundeid)" data-toggle="modal" data-target="#myModal">Slett</button>
-                                            <!--<button class="btn btn-success" ng-click="endreSporsmal(sporsmal.kundeid)">Endre</button>-->
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="myModal" class="modal fade" role="dialog">
+                                <div ng-show="kategori3">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <td>
+                                                    <div ng-show="laster">
+                                                        <h3>Laster... vennligst vent.</h3>
+                                                    </div>
+                                                </td>{{sporsmal.Beskrivelse}}
+                                            </tr>
+                                        </thead>
+                                        <tbody ng-init="loading=[]" ng-repeat="sporsmal in alleKategori3">
+                                            <tr>
+                                                <td>
+
+                                                    <h2>{{sporsmal.Beskrivelse}}</h2>
+                                                    <a href="" ng-click="loading[$index]=true">Les mer</a>
+                                                    <div ng-show="loading[$index]">
+                                                        {{sporsmal.Svar}}<br />  
+                                                        <a href="" ng-click="loading[$index]=false">lukk</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div ng-show="kategori4">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <td>
+                                                    <div ng-show="laster">
+                                                        <h3>Laster... vennligst vent.</h3>
+                                                    </div>
+                                                </td>{{sporsmal.Beskrivelse}}
+                                            </tr>
+                                        </thead>
+                                        <tbody ng-init="loading=[]" ng-repeat="sporsmal in alleKategori4">
+                                            <tr>
+                                                <td>
+
+                                                    <h2>{{sporsmal.Beskrivelse}}</h2>
+                                                    <a href="" ng-click="loading[$index]=true">Les mer</a>
+                                                    <div ng-show="loading[$index]">
+                                                        {{sporsmal.Svar}}<br />  
+                                                        <a href="" ng-click="loading[$index]=false">lukk</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+                            <div ng-show="Sporsmal">
+                                <p>Still oss et spørmål</p>
+                                <form name="skjema">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        Epost:
+                                                        <input placeholder="Epostadresse" name="email" ng-model="email" ng-required="true" ng-pattern="/^[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ].[a-zA-ZæÆøØåÅ][\w\.-]*[a-zA-Z0-9æÆøØåÅ]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/"> <!-- Fikk ikke lov til å skirve krøllalfa fordi dette er et cshtml dokument-->
+                                                        <p class="label label-info" ng-show="skjema.email.$invalid && skjema.email.$dirty">Skriv inn en gyldig epostadresse.</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+
+
+                                                        <label for="sel1">Velg Kategori </label>
+                                                        <select ng-model="Kategori" ng-required="true" class="form-control" value="Kunde" id="sel1">
+                                                            <option value="Kunde">Kunde</option>
+                                                            <option value="API">API</option>
+                                                            <option value="Angular">Angular</option>
+                                                            <option value="Mvc">Mvc</option>
+                                                        </select>
+
+
+                                                        <p class="label label-info" ng-show="skjema.Kategori.$invalid && skjema.Kategori.$dirty">Velg en kategori</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <textarea placeholder="Skriv spørsmål her" name="beskrivelse" rows="6" cols="70" ng-pattern="/(.$)/" ng-model="beskrivelse"> </textarea>
+                                                        <p class="label label-info" ng-show="skjema.beskrivelse.$invalid && skjema.beskrivelse.$dirty">Skriv inn et lovlig etternavn</p>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#spørsmålmondal" ng-click="lagreSporsmal()">Send Sporsmal</button>
+                                </form>
+                            </div>
+                            <div ng-show="Liste">
+                                <br />
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            Spørsmål ifra kunder
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div ng-show="laster">
+                                                    <h3>Laster... vennligst vent.</h3>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody ng-repeat="sporsmal in sporsmalUtenSvar">
+                                        <tr>
+                                            <td>Epost: {{sporsmal.email}}<br />  
+                                            <textarea disabled rows="6" cols="70">{{sporsmal.Beskrivelse}}</textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <button class="btn btn-warning" ng-click="setTempid(sporsmal.kundeid)" data-toggle="modal" data-target="#myModal">Slett</button>
+                                                <!--<button class="btn btn-success" ng-click="endreSporsmal(sporsmal.kundeid)">Endre</button>-->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        <div id="spørsmålmondal" class="modal fade" role="dialog">
                             <div class="modal-dialog">
+
+                                <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Slett</h4>
+                                        <h4 class="modal-title">Sending av Spørsmål</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Er du sikker på at du vil slette dette spørsmålet?.</p>
+                                        <p>{{melding}}</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="sletteSporsmal()">Slett</button>
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
-                    </div> 
+                            <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Slett</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Er du sikker på at du vil slette dette spørsmålet?.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="sletteSporsmal()">Slett</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
                 </div>
             </div>      
         </div>

@@ -29,6 +29,26 @@ namespace Nips.Controllers
             };
         }
 
+        public HttpResponseMessage Get(bool meh)
+        {
+            List<Spørsmål> alleSpørsmål = db.getList();
+            System.Diagnostics.Debug.WriteLine("Yup");
+            foreach (Spørsmål s in alleSpørsmål)
+            {
+                if(s.Svar == null)
+                {
+                    alleSpørsmål.Remove(s);
+                }
+            }
+            var Json = new JavaScriptSerializer();
+            string JsonString = Json.Serialize(alleSpørsmål);
+            return new HttpResponseMessage()
+            {
+                Content = new StringContent(JsonString, Encoding.UTF8, "application/json"),
+                StatusCode = HttpStatusCode.OK
+            };
+        }
+
         public HttpResponseMessage Get(int id)
         {
             Spørsmål alleSpørsmål = db.getSpørsmål(id);
@@ -43,9 +63,10 @@ namespace Nips.Controllers
 
         public HttpResponseMessage Post(Spørsmål spørsmål)
         {
-            
+            System.Diagnostics.Debug.WriteLine("invalid?dd");
             if (ModelState.IsValid)
             {
+                System.Diagnostics.Debug.WriteLine("invalid?");
                 bool OK = db.lagreSpørsmål(spørsmål);
                 if (OK)
                 {
